@@ -1,6 +1,6 @@
 {
   "name": "vue-cli-plugin-consoler",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "vue-cli 3 plugin to init console boilerplate",
   "main": "index.js",
   "repository": {
@@ -8,6 +8,7 @@
     "url": "git+ssh://git@github.com/ideaspace/vue-cli-plugin-consoler.git"
   },
   "keywords": [
+    "boilerplate",
     "consoler",
     "element-ui",
     "vue",
