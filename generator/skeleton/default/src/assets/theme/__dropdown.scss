@@ -1,0 +1,12 @@
+.el-select-dropdown {
+  &__item {
+    height: $dropdown-item-height;
+    line-height: $dropdown-item-height;
+    color: $dropdown-item-text-color;
+    &.hover,
+    &:hover {
+      color: $dropdown-item-text-hover-color;
+      background-color: $dropdown-item-hover-color;
+    }
+  }
+}

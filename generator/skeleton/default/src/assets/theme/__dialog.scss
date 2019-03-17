@@ -1,0 +1,18 @@
+.el-dialog {
+  &__header {
+    padding: $base-ratio-px * 2;
+    border-bottom: 1px solid $head-border-color;
+    border-radius: $border-radius $border-radius 0 0;
+  }
+  &__footer {
+    text-align: right;
+    box-sizing: border-box;
+    padding: $base-ratio-px $base-ratio-px * 2;
+    background-color: $window-bg-color;
+    border-radius: 0 0 $border-radius $border-radius;
+  }
+  &__headerbtn {
+    top: $base-ratio-px * 2;
+    right: $base-ratio-px * 2;
+  }
+}

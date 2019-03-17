@@ -1,0 +1,32 @@
+.el-radio-button {
+  &--small {
+    .el-radio-button__inner {
+      padding: 8px 16px;
+    }
+  }
+}
+
+.el-radio {
+  &__input {
+    &.is-checked {
+      .el-radio__inner {
+        background: $white-color;
+        &:after {
+          width: $radio-inner-size;
+          height: $radio-inner-size;
+          background-color: $primary-color;
+        }
+      }
+    }
+  }
+  &__inner {
+    width: $radio-size;
+    height: $radio-size;
+    &:hover {
+      border-color: $primary-color;
+    }
+  }
+  &__label {
+    vertical-align: middle;
+  }
+}

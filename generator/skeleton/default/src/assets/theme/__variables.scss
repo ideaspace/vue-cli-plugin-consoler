@@ -1,0 +1,94 @@
+// Variables
+// --------------------------
+$aside-menu-bg-color: #252a2e !default;
+$aside-menu-item-hover-color: #383f45 !default;
+$aside-menu-height: 42px !default;
+$aside-menu-collapse-width: 60px !default;
+$aside-menu-width: 180px !default;
+$top-bar-height: 50px !default;
+$top-bar-bg-color: #2C2E48;
+$body-bg-color: #f8f8f8 !default;
+
+// Base ratio
+$base-ratio: 8 !default;
+$base-ratio-px: 8px !default;
+
+// zIndex
+$zIndex-1000: 1000 !default;
+$zIndex-1001: 1001 !default;
+$zIndex-1010: 1010 !default;
+$zIndex-1011: 1011 !default;
+
+// Site Color
+$primary-color:#4CA7FB !default;
+$secondary-color: #2C2E48 !default;
+$error-color: #E44E2D !default;
+$success-color: #64AB4B !default;
+$warning-color: #fec33a !default;
+$disable-color: #999999 !default;
+$title-color: #333333 !default;
+$body-color: #555555 !default;
+$caption-color: #777777 !default;
+$white-color: #ffffff !default;
+$placeholder-color: #cccccc !default;
+$item-hover-color: #f5f9fd !default;
+$window-bg-color: #fafafa !default;
+$head-border-color: #e9e9e9 !default;
+
+// Table Color
+$table-head-bg-color: #f5f5f5 !default;
+$table-head-text-color: $disable-color !default;
+$table-border-color: $head-border-color !default;
+
+// Button
+$button-hover-color: #1890FF !default;
+
+$button-primary-bg-color: $primary-color !default;
+$button-primary-text-color: $white-color !default;
+$button-primary-hover-bg-color: $button-hover-color !default;
+$button-primary-hover-border-color: $button-hover-color !default;
+$button-primary-disable-bg-color: #A6D4FF !default;
+$button-primary-disable-text-color: $white-color !default;
+$button-primary-disable-border-color: #A6D4FF !default;
+
+$button-default-bg-color: $white-color !default;
+$button-default-text-color: $body-color !default;
+$button-default-border-color: $placeholder-color !default;
+$button-default-hover-bg-color: $white-color !default;
+$button-default-hover-border-color: $button-hover-color !default;
+$button-default-disable-text-color: $disable-color !default;
+$button-default-disable-bg-color: $white-color !default;
+$button-default-disable-border-color: #d9d9d9 !default;
+
+$button-height: 30px !default;
+
+// Input
+$input-border-color: #d9d9d9 !default;
+$input-active-border-color: $primary-color !default;
+$input-height: 30px !default;
+
+// Pager
+$page-item-active-bg-color: $primary-color !default;
+$page-item-active-text-color: $white-color !default;
+$page-item-active-border-color: $primary-color !default;
+$page-item-bg-color: $white-color !default;
+$page-item-text-color: $caption-color !default;
+$page-item-border-color: $input-border-color !default;
+
+// Dropdown
+$dropdown-item-height: 30px !default;
+$dropdown-item-hover-color: $item-hover-color !default;
+$dropdown-item-text-color: $body-color !default;
+$dropdown-item-text-hover-color: $primary-color !default;
+$dropdown-disable-text-color: $disable-color !default;
+
+// Radio
+$radio-size: 16px !default;
+$radio-inner-size: 8px !default;
+
+// Border Radius
+$border-radius: 3px !default;
+
+// Animation
+$deceleration: cubic-bezier(0.0, 0.0, 0.2, 1) !default;
+$acceleration: cubic-bezier(0.4, 0.0, 1, 1) !default;

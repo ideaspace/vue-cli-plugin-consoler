@@ -1,0 +1,8 @@
+@for $i from 1 through 2 {
+  .mt-#{$base-ratio * $i} {
+    margin-top: #{$base-ratio * $i}px;
+  }
+  .ml-#{$base-ratio * $i} {
+    margin-left: #{$base-ratio * $i}px;
+  }
+}

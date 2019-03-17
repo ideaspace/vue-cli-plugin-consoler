@@ -1,0 +1,19 @@
+.el-date-editor {
+  .el-input__prefix {
+    left: 2px;
+  }
+  .el-input__inner {
+    padding: 0 $base-ratio-px 0 $base-ratio-px * 3;
+  }
+  &.el-date-editor {
+    .el-input__inner {
+      padding-left: $base-ratio-px * 3;
+    }
+  }
+}
+
+.el-range-editor--small {
+  .el-range-separator {
+    line-height: 30px;
+  }
+}

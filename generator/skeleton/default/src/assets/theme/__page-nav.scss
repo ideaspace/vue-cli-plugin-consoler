@@ -1,0 +1,41 @@
+.el-pagination {
+  text-align: right;
+  &.is-background {
+    .btn-next,
+    .btn-prev,
+    .el-pager li {
+      border-radius: $border-radius;
+      background-color: $white-color;
+      border: 1px solid $page-item-border-color;
+      color: $page-item-text-color;
+    }
+    .btn-next,
+    .btn-prev {
+      &:not(:disabled):hover {
+        color: $primary-color;
+        border-color: $primary-color;
+      }
+    }
+    .el-pager li {
+      line-height: 26px;
+      &:not(.disabled):hover {
+        color: $primary-color;
+        border-color: $primary-color;
+      }
+      &.active {
+        border-color: $page-item-active-border-color;
+        background-color: $page-item-active-bg-color;
+        &:hover {
+          color: $white-color;
+        }
+      }
+    }
+  }
+  .el-pagination__sizes {
+    margin-right: -10px;
+  }
+}
+
+.el-pagination__sizes .el-input .el-input__inner:hover {
+  border-color: $primary-color;
+}

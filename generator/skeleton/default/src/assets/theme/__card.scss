@@ -1,0 +1,6 @@
+.el-card {
+  border: 0;
+  &__body {
+    padding: $base-ratio-px * 2;
+  }
+}

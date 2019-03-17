@@ -1,0 +1,5 @@
+@each $orient in left, right, center {
+  .text-#{$orient} {
+    text-align: #{$orient};
+  }
+}

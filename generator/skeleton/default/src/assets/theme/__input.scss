@@ -1,0 +1,23 @@
+.el-input {
+  &.is-active {
+    .el-input__inner {
+      border-color: $input-active-border-color;
+    }
+  }
+  &__inner {
+    padding: 0 8px;
+    border: 1px solid $input-border-color;
+    &:focus {
+      border-color: $input-active-border-color;
+    }
+  }
+  &--small {
+    .el-input__inner {
+      height: $input-height;
+      line-height: $input-height;
+    }
+    .el-input__icon {
+      line-height: $input-height;
+    }
+  }
+}

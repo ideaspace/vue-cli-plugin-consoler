@@ -1,0 +1,49 @@
+.el-table {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  &:first-child {
+    margin-top: 0;
+  }
+  &__header {
+    th {
+      color: $table-head-text-color;
+      background-color: $table-head-bg-color;
+    }
+  }
+  &--border {
+    border-color: $table-border-color !important;
+    &:after {
+      background-color: $table-border-color;
+    }
+    th,
+    td{
+      border-right: 0;
+    }
+  }
+  .cell {
+    .el-button + .el-button {
+      margin-left: 0;
+    }
+    .el-button--text {
+      padding: 0;
+      margin-right: $base-ratio-px / 2;
+    }
+    .svg-icon {
+      height: $base-ratio-px + 4;
+      width: $base-ratio-px + 4;
+      margin-right: $base-ratio-px / 2;
+      vertical-align: $base-ratio-px / -4;
+    }
+    i[class^="el-icon-"] {
+      margin-right: $base-ratio-px / 2;
+    }
+    span {
+      vertical-align: middle;
+    }
+  }
+  &__empty-text {
+    .el-button--small {
+      padding: $base-ratio-px $base-ratio-px/2;
+    }
+  }
+}

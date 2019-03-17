@@ -1,0 +1,16 @@
+import {
+  ALERT_LEVEL,
+  ALERT_HISTORY_STATUS,
+} from '@/dict-data';
+
+export const ALERT_HISTORY_STATUS_TEXT = {
+  [ALERT_HISTORY_STATUS.PENDING]: '告警中',
+  [ALERT_HISTORY_STATUS.FIRING]: '告警中',
+  [ALERT_HISTORY_STATUS.CONFIRMED]: '已确认',
+  [ALERT_HISTORY_STATUS.RECOVERED]: '已恢复',
+};
+
+export const ALERT_LEVEL_TEXT = {
+  [ALERT_LEVEL.NORMAL]: '一般',
+  [ALERT_LEVEL.CRITICAL]: '严重',
+};

@@ -1,0 +1,37 @@
+.menu-scroll {
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #aaaaaa;
+    border-left: 2px solid transparent
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #383f45;
+    border-left: 2px solid transparent;
+    &:window-inactive {
+      background: rgba(0,0,0,.1)
+    }
+  }
+}
+
+.main-scroll {
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #e5e5e5;
+    border-left: 2px solid transparent
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #a6a6a6;
+    border-left: 2px solid transparent;
+    &:window-inactive {
+      background: rgba(0,0,0,.1)
+    }
+  }
+}

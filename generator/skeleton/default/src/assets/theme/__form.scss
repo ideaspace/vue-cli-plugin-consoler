@@ -1,0 +1,82 @@
+.el-form {
+  & + .el-table {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+.el-form-item {
+  .el-table {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .el-input-group__prepend,
+  .el-input-group__append {
+    height: 26px;
+    svg {
+      fill: #999;
+    }
+  }
+  .el-input-group__prepend {
+    padding: 0 $base-ratio-px * 2;
+  }
+  .el-input__inner {
+    padding: 0 $base-ratio-px;
+    border-radius: $border-radius;
+  }
+  .el-textarea__inner {
+    padding: $base-ratio-px;
+    border-radius: $border-radius;
+  }
+  &__content {
+    //font-size: 0;
+  }
+}
+
+.form-advance--filter{
+  position: relative;
+  margin-top: -$base-ratio-px;
+  margin-bottom: $base-ratio-px * 2;
+  background-color: $window-bg-color;
+  padding: $base-ratio-px * 2 $base-ratio-px * 2 0;
+  .el-form-item {
+    margin-bottom: $base-ratio-px * 2;
+  }
+  .el-icon-caret-top {
+    position: absolute;
+    right: $base-ratio-px - 2;
+    top: -$base-ratio-px - 2;
+    color: $window-bg-color;
+  }
+}
+
+.el-col {
+  &.text-right {
+    .el-form-item {
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.el-dialog__body {
+  .el-form-item__content {
+    word-break: break-all;
+    padding-left: $base-ratio-px;
+  }
+  .el-form-item__error {
+    padding-left: $base-ratio-px;
+  }
+  .el-form-item__label {
+    position: relative;
+    overflow: hidden;
+    margin-right: $base-ratio-px;
+    padding-right: $base-ratio-px;
+    &:after {
+      position: absolute;
+      content: ':';
+      right: 0;
+      top: 0;
+    }
+  }
+}

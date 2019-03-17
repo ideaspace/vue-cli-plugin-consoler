@@ -1,0 +1,66 @@
+.el-transfer-panel {
+  border-radius: 0;
+
+  .el-checkbox__inner {
+    border-radius: 0;
+  }
+
+  .el-transfer-panel__header {
+    .el-checkbox {
+      .el-checkbox__label {
+        vertical-align: middle;
+        color: $caption-color;
+        span {
+          color: $caption-color;
+        }
+      }
+    }
+  }
+
+  &__filter {
+    .el-input__inner {
+      border-radius: $border-radius;
+      padding-right: $base-ratio-px * 3;
+      padding-left: $base-ratio-px;
+    }
+
+    .el-input__prefix {
+      left: auto;
+      right: $base-ratio-px;
+    }
+
+    .el-input__icon {
+      width: $base-ratio-px * 2;
+      margin-left: 0;
+    }
+  }
+
+  &__item {
+    &:hover {
+      background-color: $item-hover-color;
+    }
+
+    &.el-checkbox {
+      color: $body-color;
+    }
+  }
+}
+
+.el-transfer {
+  &__button {
+    padding: $base-ratio-px;
+    border-radius: $border-radius;
+
+    &.is-disabled {
+      border: 1px solid #d2d6da;
+      background-color: $window-bg-color;
+      color: #d2d6da;
+
+      &:hover {
+        border: 1px solid #d2d6da;
+        background-color: $window-bg-color;
+        color: #d2d6da;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.el-checkbox {
+  &__input {
+    &.is-checked {
+      .el-checkbox__inner {
+        background-color: $primary-color;
+        border-color: $primary-color;
+        &:after {
+          transform: rotate(45deg) scale(1.2);
+        }
+      }
+      + .el-checkbox__label {
+        color: $primary-color;
+      }
+    }
+  }
+  &__inner {
+    border-radius: 0;
+    &:hover {
+      border-color: $primary-color;
+    }
+  }
+}

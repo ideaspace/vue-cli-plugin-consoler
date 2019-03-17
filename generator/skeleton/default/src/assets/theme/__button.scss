@@ -1,0 +1,55 @@
+.el-button {
+  svg {
+    height: 12px;
+    fill: #fff;
+    vertical-align: middle;
+    margin-right: $base-ratio-px / 2;
+  }
+  .el-icon-plus {
+    margin-right: $base-ratio-px / 2;
+  }
+
+  &--small {
+    padding: 8px 16px;
+  }
+
+  &--default {
+    background-color: $button-default-bg-color;
+    color: $button-default-text-color;
+    &:hover,
+    &:focus {
+      background-color: $button-default-hover-bg-color;
+      border-color: $button-default-hover-border-color;
+    }
+  }
+  &--primary {
+    background-color: $button-primary-bg-color;
+    color: $button-primary-text-color;
+    &:hover,
+    &:focus {
+      background-color: $button-primary-hover-bg-color;
+      border-color: $button-primary-hover-border-color;
+    }
+    &.is-disabled {
+      background-color: $button-primary-disable-bg-color;
+      color: $button-primary-disable-text-color;
+      border-color: $button-primary-disable-border-color;
+      &:hover,
+      &:focus {
+        background-color: $button-primary-disable-bg-color;
+        color: $button-primary-disable-text-color;
+        border-color: $button-primary-disable-border-color;
+      }
+    }
+  }
+  &--text {
+    padding: 0;
+    > span {
+      display: inline-flex;
+      align-items: center;
+    }
+    svg {
+      fill: #409eff;
+    }
+  }
+}
