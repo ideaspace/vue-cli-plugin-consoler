@@ -54,18 +54,34 @@ module.exports = {
       parMenuId: -1,
       urlAddr: '',
       hasChildren: true,
-      items: [{
-        hasChildren: false,
-        items: null,
-        menuId: 124,
-        menuName: '查询表格',
-        menuLevel: 2,
-        menuIndex: 4,
-        menuIcon: '',
-        parMenuId: 103,
-        menuDesc: '查询表格',
-        urlAddr: 'list-table-list'
-      }]
+      items: [
+        {
+          hasChildren: false,
+          items: null,
+          menuId: 124,
+          menuName: '查询表格',
+          menuLevel: 2,
+          menuIndex: 4,
+          menuIcon: '',
+          parMenuId: 103,
+          menuDesc: '查询表格',
+          urlAddr: 'list-table-list'
+        },
+<%_ if (options.table) {_%>
+        {
+          hasChildren: false,
+          items: null,
+          menuId: 125,
+          menuName: '表格树',
+          menuLevel: 2,
+          menuIndex: 4,
+          menuIcon: '',
+          parMenuId: 103,
+          menuDesc: '表格树',
+          urlAddr: 'list-table-tree'
+        },
+<%_ } _%>
+      ]
     },
     {
       menuId: 104,
@@ -132,7 +148,7 @@ module.exports = {
           menuIcon: '',
           parMenuId: 105,
           urlAddr: 'error-500'
-        },
+        }
       ]
     },
     {
@@ -154,10 +170,11 @@ module.exports = {
           menuIndex: 1,
           menuIcon: '',
           parMenuId: 106,
-          urlAddr: 'user-modify-password'
+          urlAddr: 'user-account-password'
         }
       ]
-    }],
+    }
+  ],
   findAll () {
     return this.all;
   }

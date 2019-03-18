@@ -21,14 +21,18 @@ module.exports = (api, options, rootOptions) => {
     }
   })
 
-  api.render('./skeleton/default', {
-    ...options
+  api.extendPackage({
+    scripts: {
+      "new": "hygen new",
+      "new:view": "hygen new view --name",
+      "new:viewr": "hygen new viewr --name",
+      "new:module": "hygen new module --name",
+      "new:dialog": "hygen new dialog --name",
+      "new:comp": "hygen new comp --name",
+      "new:api": "hygen new api --name",
+      "new:router": "hygen new router --name"
+    }
   })
-
-  api.render('./tmpl')
-
-  api.render('./mock')
-
 
   // 选择主题
   if (options.choiceTheme) {}
@@ -54,6 +58,7 @@ module.exports = (api, options, rootOptions) => {
         }
       }
     })
+    options.table = options.choiceComp.includes('table')
   }
 
   // 选择可视化图表
@@ -69,11 +74,26 @@ module.exports = (api, options, rootOptions) => {
     })
   }
 
+  api.render('./skeleton/default', {
+    ...options
+  })
+
+  api.render('./tmpl', {
+    ...options
+  })
+
+  api.render('./mock', {
+    ...options
+  })
+
   api.render({
-    './src/app.config.ts': './skeleton/config/app.ts'
+    './src/app.config.ts': './config/app.ts'
+  })
+
+  api.render({
+    './vue.config.js': './config/vue.ts'
   })
 
   api.onCreateComplete(() => {
-    api.exitLog('hello world')
   })
 }

@@ -57,14 +57,7 @@ module.exports = [
   },
   {
     type: 'confirm',
-    name: 'proxy',
-    message: '是否启用反向代理设置?',
-  },
-  {
-    type: 'input',
     name: 'choiceProxy',
-    message: '请输入反向代理服务器地址',
-    validate: input => !!input,
-    when: answers => answers.proxy
-  },
+    message: '是否启用反向代理设置?',
+  }
 ]
