@@ -5,7 +5,8 @@ const http = axios.create({
   baseURL: '/api',
 });
 
-http.interceptors.request.use();
+http.interceptors.request.use(
+);
 
 http.interceptors.response.use(
   (response) => {
