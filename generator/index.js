@@ -27,9 +27,7 @@ module.exports = (api, options, rootOptions) => {
 
   api.render('./tmpl')
 
-  api.render('./mock', {
-    ...options
-  })
+  api.render('./mock')
 
 
   // 选择主题

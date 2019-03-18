@@ -1,3 +1,7 @@
 module.exports = (api) => {
-  console.log(api)
+  api.configureWebpack(webpackConfig => {
+    configureWebpack: {
+      name: require(api.resolve('./src/app.config.ts')).title
+    }
+  })
 }
