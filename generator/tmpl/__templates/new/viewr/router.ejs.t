@@ -1,6 +1,6 @@
----
+<%='---'%>
 to: src/views/<%%= h.inflection.dasherize(name) %%>/view.router.ts
----
+<%='---'%>
 export default [
   {
     path: '/<%%= h.inflection.dasherize(name) %%>',

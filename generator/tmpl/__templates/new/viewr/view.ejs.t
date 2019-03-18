@@ -1,6 +1,6 @@
----
+<%='---'%>
 to: src/views/<%%= h.inflection.dasherize(name.replace(/-/g, '_')) %%>/index.vue
----
+<%='---'%>
 <template>
   <view-container title="页面标题">
   </view-container>

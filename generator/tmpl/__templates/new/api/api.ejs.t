@@ -1,6 +1,6 @@
----
+<%='---'%>
 to: src/apis/<%%= h.inflection.dasherize(name) %%>.ts
----
+<%='---'%>
 import http from './index';
 import { AxiosPromise, AxiosResponse } from 'axios';
 

@@ -1,8 +1,8 @@
----
+<%='---'%>
 to: src/views/<%%= h.inflection.dasherize(name.slice(0, name.indexOf('/'))) %%>/view.router.ts
 inject: true
 after: export default \[
----
+<%='---'%>
 <%%
   const compName = h.inflection.dasherize(name.slice(name.indexOf('/') + 1))
 %%>  {
