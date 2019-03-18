@@ -11,7 +11,7 @@
         <!--</el-breadcrumb-item>-->
         <!--</el-breadcrumb>-->
         <!--</div>-->
-        <div class="view-head--back" v-if="backUrl">
+        <div class="view-head--back" v-if="hasUrl">
           <el-button type="text" icon="el-icon-back" @click="onBack"></el-button>
         </div>
         <div class="view-head--info">
@@ -32,44 +32,42 @@
 </template>
 
 <script lang="ts">
-  import { Component, Prop, Vue } from 'vue-property-decorator';
-  import { Getter } from 'vuex-class';
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Getter } from 'vuex-class';
 
-  @Component
-  export default class ViewContainer extends Vue {
-    public get breadcrumbList() {
-    }
+@Component
+export default class ViewContainer extends Vue {
 
-    @Getter('breadcrumb/trace')
-    public breadcrumb;
+  @Prop({ type: Boolean, default: true })
+  public showHead!: boolean;
 
-    @Prop({
-      default: () => true,
-    })
-    private showHead: boolean;
+  @Prop({
+    default: '',
+  })
+  public title!: string;
 
-    @Prop({
-      default: () => '',
-    })
-    private title: string;
+  @Prop(String)
+  public backUrl!: string;
 
-    @Prop({
-      default: () => '',
-    })
-    private backUrl: string;
-
-    public get fromName() {
-      return this.$store.state.menu.fromName;
-    }
-
-    public onBack() {
-      this.$router.push({
-        name: !!this.backUrl ? this.backUrl : this.fromName,
-        params: this.$route.params,
-        query: this.$route.query
-      });
-    }
+  public get fromName() {
+    return this.$store.state.menu.fromName;
   }
+
+  public get hasUrl() {
+    if (this.backUrl === '' && this.fromName === '') {
+      return false;
+    }
+    return this.backUrl !== undefined;
+  }
+
+  public onBack() {
+    this.$router.push({
+      name: this.backUrl || this.fromName,
+      params: this.$route.params,
+      query: this.$route.query,
+    });
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

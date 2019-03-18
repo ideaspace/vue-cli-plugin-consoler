@@ -3,9 +3,9 @@ import './assets/style.scss';
 import Element from 'element-ui';
 import {VueConstructor} from 'vue';
 import {Route} from 'vue-router';
-import {Comps} from './components';
+import Comps from './components';
 import router from './router';
-import stores from './store';
+import store from './store';
 
 class Bootstrap {
   public router: any;
@@ -54,7 +54,7 @@ class Bootstrap {
         this.stores.dispatch('menu/createMenuData', {toName: to.name, fromName: from.name});
         next();
       } else {
-        this.stores.dispatch('menu/createMenuData', {toName: to.name, fromName: from.name});
+        this.stores.dispatch('menu/updateMenuData', {toName: to.name, fromName: from.name});
         next();
       }
     });
@@ -90,4 +90,4 @@ class Bootstrap {
   }
 }
 
-export default new Bootstrap(router, stores);
+export default new Bootstrap(router, store);

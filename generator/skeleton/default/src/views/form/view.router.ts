@@ -6,5 +6,5 @@ export default [
     meta: {
       title: '基础表单',
     },
-  }
+  },
 ];

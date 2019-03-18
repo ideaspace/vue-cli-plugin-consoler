@@ -16,6 +16,8 @@ module.exports = (api, options, rootOptions) => {
       "cookie-parser": "^1.4.4",
       "hygen": "^4.0.2",
       "jsonwebtoken": "^8.5.0",
+      "node-sass": "^4.9.0",
+      "sass-loader": "^7.1.0",
       "svg-sprite-loader": "^4.1.3",
       "typescript": "^3.0.0",
     }

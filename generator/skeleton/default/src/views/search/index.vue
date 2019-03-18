@@ -1,16 +1,15 @@
 <template>
-  <view-container title="指标查询">
+  <view-container title="搜索页面">
     <el-row>
       <el-col :span="12" :offset="6">
         <el-input
           @keyup.native.enter="getMetricList"
           @clear="getMetricList"
           v-model="q.query"
-          disabled
           placeholder="请输入查询表达式搜索"
         >
           <template slot="append">
-            <el-button disabled @click="getMetricList"><i class="el-icon-search"></i></el-button>
+            <el-button @click="getMetricList"><i class="el-icon-search"></i></el-button>
           </template>
         </el-input>
       </el-col>
@@ -40,12 +39,11 @@
   })
   export default class SearchView extends Vue {
     public q = {};
-    public costTime = 2;
-    public pageTotal = 100;
-    public metrics = [];
+    public costTime: number = 1;
+    public pageTotal: number = 118;
+    public metrics: any[] = [];
 
-    public getMetricList() {
-    }
+    public getMetricList() {}
   }
 </script>
 <style lang="scss" scoped>

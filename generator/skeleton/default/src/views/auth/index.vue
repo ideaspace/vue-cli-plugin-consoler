@@ -1,6 +1,6 @@
 <template>
   <div class="user-login">
-    <el-card shadow="always">
+    <el-card class="user-login--cont" shadow="always">
       <div class="user-login--cont-title">
         <h3>登录</h3>
       </div>
@@ -21,50 +21,50 @@
   </div>
 </template>
 <script lang="ts">
-import {Component, Vue} from 'vue-property-decorator';
-import {postLogin, UserVO} from '@/apis/auth';
+  import {Component, Vue} from 'vue-property-decorator';
+  import {postLogin, UserVO} from '@/apis/auth';
 
-@Component({
-  name: 'LoginView',
-})
-export default class LoginView extends Vue {
+  @Component({
+    name: 'LoginView',
+  })
+  export default class LoginView extends Vue {
 
-  public loading: boolean = false;
+    public loading: boolean = false;
 
-  public form: UserVO = {
-    userAccount: 'admin',
-    password: '123456',
-  };
+    public form: UserVO = {
+      userAccount: 'admin',
+      password: '123456',
+    };
 
-  public rules = {
-    userAccount: [{ required: true, trigger: 'blur', message: '用户名不能为空' }],
-    password: [{ required: true, trigger: 'blur', message: '密码不能为空' }]
-  };
+    public rules = {
+      userAccount: [{required: true, trigger: 'blur', message: '用户名不能为空'}],
+      password: [{required: true, trigger: 'blur', message: '密码不能为空'}],
+    };
 
-  public async onAction() {
-    this.loading = true;
-    try {
-      const r = await postLogin(this.form);
-      if (r.data.code === 0) {
-        this.$router.push({
-          name: 'dashboard',
-        });
+    public async onAction() {
+      this.loading = true;
+      try {
+        const r = await postLogin(this.form);
+        if (r.data.code === 0) {
+          this.$router.push({
+            name: 'dashboard',
+          });
+        }
+      } catch (e) {
+      } finally {
+        this.loading = false;
       }
-    } catch (e) {
-    } finally {
-      this.loading = false;
+    }
+
+    public onSignIn() {
+      // @ts-ignore
+      this.$refs.form.validate((valid) => {
+        if (valid) {
+          this.onAction();
+        }
+      });
     }
   }
-
-  public onSignIn() {
-    // @ts-ignore
-    this.$refs.form.validate(valid => {
-      if (valid) {
-        this.onAction()
-      }
-    })
-  }
-}
 </script>
 <style lang="scss" scoped>
 .user-login {
@@ -73,12 +73,17 @@ export default class LoginView extends Vue {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-
+  &--cont {
+    background: $white-color url('./../../assets/bg_auth_sm.jpg') top left no-repeat;
+    background-size: contain;
+    padding-top: 140px;
+  }
   &--cont-title {
     padding-bottom: $base-ratio-px * 2;
 
     h3 {
       font-size: $base-ratio-px * 3;
+      color: $white-color;
     }
   }
 

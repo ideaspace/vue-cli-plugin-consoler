@@ -21,7 +21,7 @@
         </div>
       </el-col>
     </el-row>
-    <h4 class="mt-8">应用信息</h4>
+    <h4 class="mt-16">应用信息</h4>
     <el-table :data="appList">
       <div class="empty" slot="empty">暂无数据，立即
         <el-button type="text">新增</el-button>

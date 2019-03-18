@@ -5,14 +5,14 @@
     <div
       class="wrap-in"
     >
-      <div class="brand">
-        <div class="brand-logo"></div>
-        <div class="brand-text">
-          <span>天翼云</span>
-          <span class="divider">|</span>
-          <span>中后台前端集成方案</span>
-        </div>
-      </div>
+      <!--<div class="brand">-->
+        <!--<div class="brand-logo"></div>-->
+        <!--<div class="brand-text">-->
+          <!--<span>天翼云</span>-->
+          <!--<span class="divider">|</span>-->
+          <!--<span>中后台前端集成方案</span>-->
+        <!--</div>-->
+      <!--</div>-->
       <router-view></router-view>
     </div>
   </div>
@@ -33,8 +33,7 @@
   bottom: 0;
   top: 0;
   height: 100%;
-  background-color: $body-bg-color;
-  background-image: linear-gradient(to bottom, #1d8ef5, #4ca9f7);
+  background-color: #ecf9ff;
   overflow: hidden;
 }
 .wrap-in {

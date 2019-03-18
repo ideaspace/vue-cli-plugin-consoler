@@ -1,5 +1,5 @@
 import * as types from '../mutation-types';
-import {getUser} from './../../apis/users';
+import {getUser} from '@/apis/users';
 
 interface UserVO {
   username?: string;

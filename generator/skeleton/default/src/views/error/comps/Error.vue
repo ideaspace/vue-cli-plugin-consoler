@@ -11,20 +11,21 @@
 </template>
 
 <script lang="ts">
-  import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
-  @Component
-  export default class Error extends Vue {
-    @Prop()
-    private type!: string;
-    @Prop()
-    private message!: string;
-    private goHome(): void {
-      this.$router.push({
-        name: 'dashboard'
-      })
-    }
+@Component
+export default class Error extends Vue {
+  @Prop()
+  private type!: string;
+  @Prop()
+  private message!: string;
+
+  private goHome(): void {
+    this.$router.push({
+      name: 'dashboard',
+    });
   }
+}
 </script>
 
 <style scoped lang="scss">
@@ -39,7 +40,7 @@
     align-items: center;
   }
   &-type {
-    height: $base-ratio-px * 60;
+    height: $base-ratio-px * 60 - 60;
     width: 100%;
     margin-top: $base-ratio-px * 3;
     background-repeat: no-repeat;

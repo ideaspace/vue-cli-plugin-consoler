@@ -22,7 +22,7 @@
             <el-input v-model="form.contactEmail"></el-input>
           </el-form-item>
           <el-form-item label="备注信息">
-            <el-input :row="5" type="textarea" v-model="form.remark"></el-input>
+            <el-input :rows="5" type="textarea" v-model="form.remark"></el-input>
           </el-form-item>
           <el-form-item>
             <el-button type="primary">保存</el-button>
@@ -34,22 +34,22 @@
   </view-container>
 </template>
 <script lang="ts">
-  import {Component, Vue} from 'vue-property-decorator';
+import {Component, Vue} from 'vue-property-decorator';
 
-  @Component({
-    name: 'FormView'
-  })
-  export default class FormView extends Vue {
-    public form = {
-      tenantName: '',
-      tenantCode: '',
-      contactName: '',
-      contactPhone: '',
-      contactAddress: '',
-      contactEmail: '',
-      remark: ''
-    }
-  }
+@Component({
+  name: 'FormView',
+})
+export default class FormView extends Vue {
+  public form = {
+    tenantName: '',
+    tenantCode: '',
+    contactName: '',
+    contactPhone: '',
+    contactAddress: '',
+    contactEmail: '',
+    remark: '',
+  };
+}
 </script>
 
 <style lang="scss" scoped>
