@@ -10,6 +10,6 @@ after: export default \[
     name: '<%%= h.changeCase.paramCase(name) %%>',
     component: () => import('./<%%= h.inflection.dasherize(compName) %%>.vue'),
     meta: {
-      title: '<%%= h.inflection.dasherize(name) %%>',
+      title: '<%%= h.changeCase.paramCase(name) %%>',
     },
   },
