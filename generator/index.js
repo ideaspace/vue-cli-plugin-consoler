@@ -96,6 +96,14 @@ module.exports = (api, options, rootOptions) => {
     './vue.config.js': './config/vue.ts'
   })
 
+  api.render({
+    './tsconfig.json': './config/tsconfig.json'
+  })
+
+  api.render({
+    './tslint.json': './config/tslint.json'
+  })
+
   api.onCreateComplete(() => {
   })
 }
