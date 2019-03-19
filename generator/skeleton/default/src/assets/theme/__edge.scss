@@ -1,8 +1,26 @@
-@for $i from 1 through 2 {
+@for $i from 0 through 5 {
   .mt-#{$base-ratio * $i} {
     margin-top: #{$base-ratio * $i}px;
   }
   .ml-#{$base-ratio * $i} {
     margin-left: #{$base-ratio * $i}px;
+  }
+  .mr-#{$base-ratio * $i} {
+    margin-right: #{$base-ratio * $i}px;
+  }
+  .mb-#{$base-ratio * $i} {
+    margin-bottom: #{$base-ratio * $i}px;
+  }
+  .pt-#{$base-ratio * $i} {
+    padding-top: #{$base-ratio * $i}px;
+  }
+  .pl-#{$base-ratio * $i} {
+    padding-left: #{$base-ratio * $i}px;
+  }
+  .pr-#{$base-ratio * $i} {
+    padding-right: #{$base-ratio * $i}px;
+  }
+  .pb-#{$base-ratio * $i} {
+    padding-bottom: #{$base-ratio * $i}px;
   }
 }

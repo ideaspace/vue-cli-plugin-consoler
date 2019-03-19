@@ -1,4 +1,5 @@
 .el-pagination {
+  margin-top: $base-ratio-px * 2;
   text-align: right;
   &.is-background {
     .btn-next,
