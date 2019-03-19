@@ -33,7 +33,7 @@ module.exports = {
       errors: true
     },
     before: require('./tests/mock-api'),
-  <%_ if (options.proxy) {_%>
+  <%_ if (options.choiceProxy) {_%>
     proxy: {
       '/api': {
         ws: false,

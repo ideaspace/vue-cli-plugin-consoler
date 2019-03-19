@@ -6,7 +6,7 @@ after: export default \[
 <%%
   const compName = h.inflection.dasherize(name.slice(name.indexOf('/') + 1))
 %%>  {
-    path: '<%%= h.inflection.dasherize(name) %%>',
+    path: '/<%%= h.inflection.dasherize(name) %%>',
     name: '<%%= h.changeCase.paramCase(name) %%>',
     component: () => import('./<%%= h.inflection.dasherize(compName) %%>.vue'),
     meta: {
