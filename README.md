@@ -12,3 +12,6 @@ Then create a project and add the Consoler plugin:
 vue create my-app
 cd my-app
 vue add consoler
+```
+
+This will update and add the files in your app, then you can use `npm run serve` command to serve your app.
