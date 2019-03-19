@@ -61,7 +61,7 @@
         }
         if (val === 'changePwd') {
           this.$router.push({
-            name: 'user-modify-password',
+            name: 'user-account-password',
           });
         }
       }
