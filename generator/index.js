@@ -114,6 +114,22 @@ module.exports = (api, options, rootOptions) => {
 
   api.onCreateComplete(() => {
     // remove files
+    const gitignorePath = api.resolve('.gitignore')
+
+    let content
+
+    if (fs.existsSync(gitignorePath)) {
+      content = fs.readFileSync(gitignorePath, { encoding: 'utf8' })
+    } else {
+      content = ''
+    }
+
+    if (content.indexOf('_templates/') === -1) {
+      content += '\n_templates/\n'
+
+      fs.writeFileSync(gitignorePath, content, { encoding: 'utf8' })
+    }
+
     const srcPath = api.resolve('src')
     const compPath = api.resolve('src/components')
     const viewPath = api.resolve('src/views')
@@ -134,7 +150,7 @@ module.exports = (api, options, rootOptions) => {
     })
     // disable eslint and use tslint
     if (api.hasPlugin('eslint')) {
-      const eslintPath = path.join(srcPath, '..', '.eslintignore')
+      const eslintPath = api.resolve('.eslintignore')
       fs.writeFileSync(eslintPath, '/src', { encoding: 'utf8' })
     }
   })
