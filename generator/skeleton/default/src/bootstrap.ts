@@ -57,10 +57,15 @@ class Bootstrap {
         this.stores.dispatch('menu/updateMenuData', {toName: to.name, fromName: from.name});
         next();
       }
+      this.stores.dispatch('container/createLoading');
     });
 
     this.router.afterEach((to: Route, from: Route) => {
       document.title = `${require('./app.config').title}-${to.meta.title || ''}`;
+      // 模拟页面加载效果，实际开发视情况保留或删除
+      setTimeout(() => {
+        this.stores.dispatch('container/createLoaded');
+      }, 500)
     });
 
     // 重置 Element-Ui 部分组件的样式
