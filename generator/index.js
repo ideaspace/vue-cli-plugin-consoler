@@ -114,6 +114,7 @@ module.exports = (api, options, rootOptions) => {
 
   api.onCreateComplete(() => {
     const srcPath = path.resolve('src')
+    const compPath = path.resolve('src/components')
     const viewPath = path.resolve('src/views')
     fs.readdirSync(srcPath).forEach(file => {
       if (/\.js$/.test(file)) {
@@ -123,6 +124,11 @@ module.exports = (api, options, rootOptions) => {
     fs.readdirSync(viewPath).forEach(file => {
       if (/\.vue$/.test(file)) {
         fs.unlinkSync(`${viewPath}/${file}`)
+      }
+    })
+    fs.readdirSync(compPath).forEach(file => {
+      if (/\.vue$/.test(file)) {
+        fs.unlinkSync(`${compPath}/${file}`)
       }
     })
   })
