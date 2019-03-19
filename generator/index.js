@@ -11,7 +11,7 @@ module.exports = (api, options, rootOptions) => {
       "js-cookie": "^2.2.0",
       "lodash": "^4.17.11",
       "vue-router": "^3.0.1",
-      "vuex": "^3.0.1",
+      "vuex": "^3.0.1"
     },
     devDependencies: {
       "@types/js-cookie": "^2.2.1",
@@ -21,7 +21,7 @@ module.exports = (api, options, rootOptions) => {
       "jsonwebtoken": "^8.5.0",
       "node-sass": "^4.9.0",
       "sass-loader": "^7.1.0",
-      "svg-sprite-loader": "^4.1.3",
+      "svg-sprite-loader": "^4.1.3"
     }
   })
 
@@ -34,7 +34,7 @@ module.exports = (api, options, rootOptions) => {
       },
       devDependencies: {
         "@vue/cli-plugin-typescript": "^3.0.0",
-        "typescript": "^3.0.0",
+        "typescript": "^3.0.0"
       }
     })
   }
@@ -53,7 +53,7 @@ module.exports = (api, options, rootOptions) => {
 
   // 选择主题
   if (options.choiceTheme) {
-  //  TODO: add several theme
+    //  TODO: add several theme
   }
 
   // 帮助文档链接
@@ -113,9 +113,10 @@ module.exports = (api, options, rootOptions) => {
   })
 
   api.onCreateComplete(() => {
-    const srcPath = path.resolve('src')
-    const compPath = path.resolve('src/components')
-    const viewPath = path.resolve('src/views')
+    // remove files
+    const srcPath = api.resolve('src')
+    const compPath = api.resolve('src/components')
+    const viewPath = api.resolve('src/views')
     fs.readdirSync(srcPath).forEach(file => {
       if (/\.js$/.test(file)) {
         fs.unlinkSync(`${srcPath}/${file}`)
@@ -131,5 +132,10 @@ module.exports = (api, options, rootOptions) => {
         fs.unlinkSync(`${compPath}/${file}`)
       }
     })
+    // disable eslint and use tslint
+    if (api.hasPlugin('eslint')) {
+      const eslintPath = path.join(srcPath, '..', '.eslintignore')
+      fs.writeFileSync(eslintPath, '/src', { encoding: 'utf8' })
+    }
   })
 }
