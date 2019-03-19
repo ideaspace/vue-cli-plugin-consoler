@@ -52,7 +52,9 @@ module.exports = (api, options, rootOptions) => {
   })
 
   // 选择主题
-  if (options.choiceTheme) {}
+  if (options.choiceTheme) {
+  //  TODO: add several theme
+  }
 
   // 帮助文档链接
   if (options.helpLink) {
