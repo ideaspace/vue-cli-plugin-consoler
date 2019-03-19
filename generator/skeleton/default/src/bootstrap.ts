@@ -65,7 +65,7 @@ class Bootstrap {
       // 模拟页面加载效果，实际开发视情况保留或删除
       setTimeout(() => {
         this.stores.dispatch('container/createLoaded');
-      }, 500)
+      }, 500);
     });
 
     // 重置 Element-Ui 部分组件的样式

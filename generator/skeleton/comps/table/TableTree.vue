@@ -49,7 +49,7 @@ export default class TableTree extends Vue {
 
   public get firstColumn() {
     // @ts-ignore
-    return this.$slots.first && this.$slots.first[0]
+    return (this.$slots.first && this.$slots.first[0] && this.$slots.first[0].componentOptions)
       ? this.$slots.first[0].componentOptions.propsData
       : {};
   }
