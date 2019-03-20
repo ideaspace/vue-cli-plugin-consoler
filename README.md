@@ -15,3 +15,14 @@ vue add consoler
 ```
 
 This will update and add the files in your project, then you can use `npm run serve` command to serve your app.
+
+### Create file via CLI
+
+``` bash
+npm run new:viewr test      => @/views/test/index.vue,  @/views/test/test.router.ts
+npm run new:view test/ab    => @/views/test/ab.vue & update test.router.ts
+npm run new:comp test/ab    => @/views/test/comps/Ab.vue
+npm run new:dialog test/ab  => @/views/test/dialogs/Ab.vue 
+npm run new:module test     => @/views/test/test.module.ts 
+npm run new:api test        => @/apis/test.ts
+```
