@@ -2,6 +2,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 import './assets/style.scss';
 import Element from 'element-ui';
 import {VueConstructor} from 'vue';
+import Component from 'vue-class-component';
 import {Route} from 'vue-router';
 import Comps from './components';
 import router from './router';
@@ -67,6 +68,13 @@ class Bootstrap {
         this.stores.dispatch('container/createLoaded');
       }, 500);
     });
+
+    // 注册 RouterHooks
+    Component.registerHooks([
+      'beforeRouteEnter',
+      'beforeRouteLeave',
+      'beforeRouteUpdate', // for vue-router 2.2+
+    ]);
 
     // 重置 Element-Ui 部分组件的样式
     // @ts-ignore
