@@ -26,3 +26,4 @@ npm run new:dialog test/ab  => @/views/test/dialogs/Ab.vue
 npm run new:module test     => @/views/test/test.module.ts 
 npm run new:api test        => @/apis/test.ts
 ```
+The Consoler plugin is integrated [hygen](http://hygen.io) to provide you with quicker create file.
