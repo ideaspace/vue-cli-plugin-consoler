@@ -78,7 +78,7 @@ module.exports = (api, options, rootOptions) => {
         }
       }
     })
-    options.table = options.choiceComp.includes('tableTree')
+    options.tableTree = options.choiceComp.includes('tableTree')
   }
 
   // 选择可视化图表
