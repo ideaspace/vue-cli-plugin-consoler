@@ -14,4 +14,4 @@ cd my-app
 vue add consoler
 ```
 
-This will update and add the files in your app, then you can use `npm run serve` command to serve your app.
+This will update and add the files in your project, then you can use `npm run serve` command to serve your app.
