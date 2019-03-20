@@ -67,7 +67,7 @@ module.exports = {
           menuDesc: '查询表格',
           urlAddr: 'list-table-list'
         },
-<%_ if (options.table) {_%>
+<%_ if (options.tableTree) {_%>
         {
           hasChildren: false,
           items: null,

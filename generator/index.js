@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const globby = require('globby')
+const rimraf = require('rimraf')
 module.exports = (api, options, rootOptions) => {
   const helper = require('./../helper')(api)
   api.extendPackage({
@@ -77,7 +78,7 @@ module.exports = (api, options, rootOptions) => {
         }
       }
     })
-    options.table = options.choiceComp.includes('table')
+    options.table = options.choiceComp.includes('tableTree')
   }
 
   // 选择可视化图表
@@ -113,7 +114,7 @@ module.exports = (api, options, rootOptions) => {
   })
 
   api.onCreateComplete(() => {
-    // remove files
+    // update .gitignore
     const gitignorePath = api.resolve('.gitignore')
 
     let content
@@ -130,6 +131,7 @@ module.exports = (api, options, rootOptions) => {
       fs.writeFileSync(gitignorePath, content, { encoding: 'utf8' })
     }
 
+    // remove the vue-cli default files
     const srcPath = api.resolve('src')
     const compPath = api.resolve('src/components')
     const viewPath = api.resolve('src/views')
@@ -148,6 +150,16 @@ module.exports = (api, options, rootOptions) => {
         fs.unlinkSync(`${compPath}/${file}`)
       }
     })
+
+    // remove preset comps
+    helper.presetComps().forEach(dir => {
+      if (!options.choiceComp) {
+        rimraf(`${compPath}/${dir}`, (r) => {})
+      } else if (!options.choiceComp.includes(dir)) {
+        rimraf(`${compPath}/${dir}`, (r) => {})
+      }
+    })
+
     // disable eslint and use tslint
     if (api.hasPlugin('eslint')) {
       const eslintPath = api.resolve('.eslintignore')

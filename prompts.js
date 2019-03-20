@@ -35,7 +35,7 @@ module.exports = [
     name: 'choiceComp',
     message: '请选择需要的组件:',
     choices: [
-      { name: '表格树', value: 'table' },
+      { name: '表格树', value: 'tableTree' },
       { name: '计数器', value: 'count' }
     ],
     when: answers => answers.innerComp
