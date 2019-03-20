@@ -8,60 +8,60 @@
   </div>
 </template>
 <script lang="ts">
-import { Component, Prop, Provide, Watch, Vue } from 'vue-property-decorator';
-import CountedTo from './counted-to';
-@Component
-export default class CountTo extends Vue {
+  import { Component, Prop, Provide, Watch, Vue } from 'vue-property-decorator';
+  import CountedTo from './counted-to';
+  @Component
+  export default class CountTo extends Vue {
 
-  get classes() {
-    return `text-${this.align}`;
+    get classes() {
+      return `text-${this.align}`;
+    }
+
+    public countValue: number = 0;
+
+    public counted: any;
+    @Prop({ default: 0 })
+    private startValue!: number;
+
+    @Prop({ default: 0 })
+    private endValue!: number;
+
+    @Prop({ default: '' })
+    private prefix!: string;
+
+    @Prop({ default: '' })
+    private suffix!: string;
+
+    @Prop({ default: 2000 })
+    private duration!: number;
+
+    @Prop({ default: 'center' })
+    private align!: string;
+
+    @Watch('startValue')
+    public onStartValueChange() {
+      this.counted.startTo();
+    }
+
+    @Watch('endValue')
+    public onEndValueChange(value: number) {
+      this.counted.startTo(value, (val: number) => {
+        this.countValue = val;
+      });
+    }
+
+    public mounted() {
+      this.startTo();
+    }
+
+    public startTo() {
+      this.counted = new CountedTo({
+        ...this.$props,
+      }).startTo(this.endValue, (val: number) => {
+        this.countValue = val;
+      });
+    }
   }
-
-  public countValue: number = 0;
-
-  public counted: any;
-  @Prop({ default: 0 })
-  private startValue!: number;
-
-  @Prop({ default: 0 })
-  private endValue!: number;
-
-  @Prop({ default: '' })
-  private prefix!: string;
-
-  @Prop({ default: '' })
-  private suffix!: string;
-
-  @Prop({ default: 2000 })
-  private duration!: number;
-
-  @Prop({ default: 'center' })
-  private align!: string;
-
-  @Watch('startValue')
-  public onStartValueChange() {
-    this.counted.startTo();
-  }
-
-  @Watch('endValue')
-  public onEndValueChange(value) {
-    this.counted.startTo(value, (val: number) => {
-      this.countValue = val;
-    });
-  }
-
-  public mounted() {
-    this.startTo();
-  }
-
-  public startTo() {
-    this.counted = new CountedTo({
-      ...this.$props,
-    }).startTo(this.endValue, (val: number) => {
-      this.countValue = val;
-    });
-  }
-}
 </script>
 <style lang="scss" scoped>
 .count-to {
