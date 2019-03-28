@@ -2,6 +2,8 @@
 
 Front end boilerplate init plugin for @vue/cli 3.0.
 
+Use the project [https://github.com/ideaspace/vue-console-boilerplate](https://github.com/ideaspace/vue-console-boilerplate)
+
 ### Install
 
 First you need to install `@vue/cli` globally (follow the instructions [here](https://cli.vuejs.org/)).
