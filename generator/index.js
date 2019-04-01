@@ -38,6 +38,12 @@ module.exports = (api, options, rootOptions) => {
         "typescript": "^3.0.0"
       }
     })
+  } else {
+    api.extendPackage({
+      dependencies: {
+        "vuex-class": "^0.3.1"
+      }
+    })
   }
 
   api.extendPackage({
