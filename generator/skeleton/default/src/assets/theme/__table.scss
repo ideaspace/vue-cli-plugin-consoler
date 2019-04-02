@@ -9,6 +9,12 @@
       color: $table-head-text-color;
       background-color: $table-head-bg-color;
     }
+    .is-leaf {
+      .el-icon-search {
+        color: $disable-color;
+        margin: $base-ratio-px /2 0 0 $base-ratio-px / 2;
+      }
+    }
   }
   &--border {
     border-color: $table-border-color !important;

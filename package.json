@@ -1,6 +1,6 @@
 {
   "name": "vue-cli-plugin-consoler",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "vue-cli 3 plugin to init console boilerplate",
   "main": "index.js",
   "repository": {
